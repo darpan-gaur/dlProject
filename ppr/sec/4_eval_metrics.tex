@@ -1,0 +1,19 @@
+\section{Evaluation Metrics}
+\subsection{Pixel Accuracy}
+Pixel accuracy is the ratio of correctly classified pixels divided by the total number of pixels. For $K+1$ classes ($K$ foreground classes and the background) pixel accuracy is defined as 
+\begin{equation*} 
+\text{PA}= \frac{\sum _{i=0}^K p_{ii}}{\sum _{i=0}^K \sum _{j=0}^K p_{ij}} 
+\end{equation*} 
+where $p_{ij}$ is the number of pixels of class $i$ predicted as belonging to class $j$.
+
+\subsection{IoU Score}
+Intersection over Union (IoU) is defined as the ratio of the area of intersection between the predicted segmentation map A and the ground truth map B to the area of their union.
+\begin{equation*} 
+\text{IoU}=  \frac{|A \cap B|}{|A \cup B|}. 
+\end{equation*} 
+
+\subsection{Dice Score}
+Dice score is defined as twice the area of overlap between the predicted (map A) and ground-truth maps (map B), divided by the total number of pixels in both maps.
+\begin{equation*} 
+\text{Dice}= \frac{ 2| A \cap B |}{|A| + |B|}. 
+\end{equation*} 
