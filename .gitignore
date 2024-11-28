@@ -1,5 +1,6 @@
-# any .npz files, saved model
+# any .npz, .pth files, saved model
 *.npz
+*.pth
 
 # data  
 data/

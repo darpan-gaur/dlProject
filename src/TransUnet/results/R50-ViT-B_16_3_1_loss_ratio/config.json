@@ -1,0 +1,1 @@
+{"model": "R50-ViT-B_16", "lr": 0.01, "epochs": 150, "batch_size": 4, "optimizer": "sgd", "momentum": 0.9, "decay": 0.0001, "seed": 304}
