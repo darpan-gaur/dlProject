@@ -1,0 +1,5 @@
+# any .npz files, saved model
+*.npz
+
+# data  
+data/
