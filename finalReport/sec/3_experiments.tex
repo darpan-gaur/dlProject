@@ -1,0 +1,86 @@
+\section{Experiments}
+\label{sec:experiments}
+We conducted an experiment to compare MaskFormer and Mask2Former by fine-tuning them on the Flood-Segmentation dataset \cite{md_faizal_karim_krish_sharma_niyar_r_barman_2022} \textbf{for semantic segmentation}. This dataset consists of 280 RGB images of flood-affected areas, with corresponding ground-truth binary masks (1 stands for flood, 0 for non-flood). Out of the 280 images, we used 200 for training, 20 for validation, and 60 for testing. Out of the 280 images, we used 200 for training, 20 for validation, and 60 for testing.
+
+\subsection{MaskFormer}
+To make the fine-tuning more robust, we used the following data augmentation techniques on the training set:
+\begin{itemize}
+    \item \texttt{Resize}: Randomly resized the images to a size $768\times768$ (ignoring the channel dimension, which is 3).
+    \item \texttt{RandomCrop}: Randomly cropped the images to a size $512\times512$.
+    \item \texttt{HorizontalFlip}: Randomly flipped the images horizontally with a probability of $0.5$.
+    \item \texttt{Normalize}: Normalized each channel of the images with the mean and standard deviation of the pixel values of training set.
+\end{itemize}
+Note that the spatial transformations (all except \texttt{Normalize}) are applied to the corresponding binary mask.
+
+We used the \textit{facebook/maskformer-swin-base-ade} and \textit{facebook/mask2former-swin-base-ade-semantic} models from Hugging Face's model hub for MaskFormer and Mask2Former, respectively.
+
+\subsubsection*{Fine-tuning}
+\textbf{Note:} Since the number of classes were different in the pre-trained model, the classification head was randomly initialized for both the models.
+
+We fine-tuned both of the models for 10 epochs with a batch size of 4. We used the Adam optimizer \cite{kingma2017adammethodstochasticoptimization} with a learning rate of $5\times10^{-5}$ for MaskFormer and $9\times10^{-5}$ for Mask2Former. MaskFormer took around 45 minutes while Mask2Former took around 1 hour to fine-tune on a single Tesla P100-PCIE-16GB GPU.
+
+\subsection{TransUnet}
+Transforms perfomed on the training data:
+\begin{itemize}
+    \item Normalization: Normalized each channel of the images with mean and standard deviation of the training set.
+    \item Resize: Resized the images to $256 \times 256$, filling the rest with zeros, keeping the aspect ratio intact.
+\end{itemize}
+
+\subsubsection*{Training}
+\begin{itemize}
+    \item \textbf{Optimizer}: SGD optimizer with a learning rate of $0.01$, momentum of $0.9$, and weight decay of $0.0001$.
+    \item \textbf{Loss function}: A combination of Dice loss and cross-entropy loss, with a weight of $0.5$ for each.
+    \item \textbf{Epochs}: 150
+    \item \textbf{Batch size}: 4
+\end{itemize}
+On training the TransUnet model, we achieved a mean IoU of $0.9671$ and dice score of $0.98367$ on the validation set, and a mean IoU of $0.96789$ and dice score of $0.98326$ on the test set.
+The model was trained on a single single Tesla P100-16GB GPU.
+The code is referred from the official implementation of TransUnet \cite{transunet_github}.
+\subsection{Graph-FCN \& CNN-G}
+
+Uses DeepLabV3 \cite{deeplabv3} model as the FCN backbone
+
+\paragraph{Training Details}
+\begin{itemize}
+    \item \textbf{Epochs}: 60
+    \item \textbf{Batch Size}: 4
+    \item \textbf{Learning Rate}:
+    \begin{itemize}
+        \item Graph-FCN: $1\text{e-}4$
+        \item CNNG: $2\text{e-}5$
+    \end{itemize}
+    \item \textbf{Optimizer}: Adam
+    \item \textbf{Loss}: Cross Entropy
+\end{itemize}
+\paragraph{MIoU Results}
+\begin{itemize}
+    \item Graph-FCN: 83.45
+    \item CNNG: 84.33
+\end{itemize}
+
+\subsection{Experimental Setup for UNet++}
+
+\paragraph{Training Details}
+The UNet++ model was configured and trained with the following parameters:
+\begin{itemize}
+    \item \textbf{Epochs:} 10
+    \item \textbf{Learning Rate:} 0.0001
+    \item \textbf{Batch Size:} 4
+    \item \textbf{Optimizer:} Adam with a learning rate of $1 \times 10^{-4}$
+\end{itemize}
+
+\paragraph{Loss Function}
+The loss function used was a combination of Binary Cross-Entropy and Dice Coefficient, formulated as:
+\[
+\mathcal{L}(Y, \hat{Y}) = -\frac{1}{N} \sum_{b=1}^N \left( \frac{1}{2} Y_b \cdot \log \hat{Y}_b + \frac{2 \cdot Y_b \cdot \hat{Y}_b}{Y_b + \hat{Y}_b} \right)
+\]
+This composite loss function is designed to optimize the model by addressing both class imbalance and the need for precise boundary delineation.
+
+\paragraph{Results}
+The UNet++ model achieved the following performance metrics:
+\begin{itemize}
+    \item \textbf{Best Validation Intersection over Union (IoU):} 0.8291
+    \item \textbf{Test IoU:} 0.8032
+\end{itemize}
+
+The results demonstrate the effectiveness of UNet++ in segmenting images with high precision, particularly under the constraint of relatively small datasets.

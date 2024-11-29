@@ -1,0 +1,8 @@
+\section{Conclusion}
+\begin{itemize}
+    \item TransUnet performs the best in terms of \texttt{mIoU} on the validation and test sets.
+    \item Even though Mask2Former claim to be better than MaskFormer, it shows only marginal improvement in terms of \texttt{mIoU} on this dataset.
+    % \item Interestingly, the absolute value of loss for Mask2Former is much higher as compared to MaskFormer 
+    \item Mask2Former (occupies 412M space on disk) has more parameters than MaskFormer (occupies 393M space on disk) which makes it slightly slower for fine-tuning and inference.
+    \item CNNG performs better than Graph-FCN which shows the effectiveness of using the GAT network.
+\end{itemize}

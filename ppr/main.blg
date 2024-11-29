@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ieeenat_fullname.bst
+Database file #1: main.bib
+Warning--to sort, need author or key in kaggle_competition
+Warning--to sort, need author or key in pascal_voc_dataset
+Warning--empty year in kaggle_competition
+Warning--empty year in pascal_voc_dataset
+Warning--empty year in medium_article_1
+You've used 13 entries,
+            2708 wiz_defined-function locations,
+            726 strings with 8468 characters,
+and the built_in function-call counts, 6910 in all, are:
+= -- 564
+> -- 535
+< -- 4
++ -- 181
+- -- 168
+* -- 592
+:= -- 1023
+add.period$ -- 31
+call.type$ -- 13
+change.case$ -- 93
+chr.to.int$ -- 13
+cite$ -- 33
+duplicate$ -- 271
+empty$ -- 499
+format.name$ -- 179
+if$ -- 1450
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 6
+newline$ -- 65
+num.names$ -- 44
+pop$ -- 241
+preamble$ -- 1
+purify$ -- 82
+quote$ -- 0
+skip$ -- 246
+stack$ -- 0
+substring$ -- 184
+swap$ -- 47
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 143
+warning$ -- 5
+while$ -- 43
+width$ -- 0
+write$ -- 149
+(There were 5 warnings)

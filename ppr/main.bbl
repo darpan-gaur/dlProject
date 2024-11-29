@@ -1,0 +1,92 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[kag()]{kaggle_competition}
+Sennet + hoa - hacking the human vasculature in 3d.
+\newblock Kaggle competition
+  \href{https://www.kaggle.com/competitions/blood-vessel-segmentation?utm_medium=email&utm_source=gamma&utm_campaign=comp-hubmap4-2024}{Link}.
+
+\bibitem[pas()]{pascal_voc_dataset}
+PASCAL VOC available online
+  \href{http://host.robots.ox.ac.uk/pascal/VOC/voc2012/}{here}.
+
+\bibitem[Chen et~al.(2021)Chen, Lu, Yu, Luo, Adeli, Wang, Lu, Yuille, and
+  Zhou]{chen2021transunettransformersmakestrong}
+Jieneng Chen, Yongyi Lu, Qihang Yu, Xiangde Luo, Ehsan Adeli, Yan Wang, Le Lu,
+  Alan~L. Yuille, and Yuyin Zhou.
+\newblock Transunet: Transformers make strong encoders for medical image
+  segmentation, 2021.
+
+\bibitem[Chen et~al.(2018)Chen, Zhu, Papandreou, Schroff, and
+  Adam]{chen2018deeplabv3+}
+Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, and Hartwig
+  Adam.
+\newblock Encoder-decoder with atrous separable convolution for semantic image
+  segmentation.
+\newblock In \emph{Proceedings of the European Conference on Computer Vision
+  (ECCV)}, pages 801--818, 2018.
+
+\bibitem[Cheng et~al.(2021)Cheng, Schwing, and
+  Kirillov]{cheng2021perpixelclassificationneedsemantic}
+Bowen Cheng, Alexander~G. Schwing, and Alexander Kirillov.
+\newblock Per-pixel classification is not all you need for semantic
+  segmentation, 2021.
+
+\bibitem[Cordts et~al.(2016)Cordts, Omran, Ramos, Rehfeld, Enzweiler, Benenson,
+  Franke, Roth, and Schiele]{7780719}
+Marius Cordts, Mohamed Omran, Sebastian Ramos, Timo Rehfeld, Markus Enzweiler,
+  Rodrigo Benenson, Uwe Franke, Stefan Roth, and Bernt Schiele.
+\newblock The cityscapes dataset for semantic urban scene understanding.
+\newblock In \emph{2016 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 3213--3223, 2016.
+
+\bibitem[Jain()]{medium_article_1}
+Abhishek Jain.
+\newblock Semantic vs instance vs panoptic segmentation on medium
+  \href{https://medium.com/@abhishekjainindore24/semantic-vs-instance-vs-panoptic-segmentation-b1f5023da39f}{Link}.
+
+\bibitem[Long et~al.(2015)Long, Shelhamer, and Darrell]{long2015fcn}
+Jonathan Long, Evan Shelhamer, and Trevor Darrell.
+\newblock Fully convolutional networks for semantic segmentation.
+\newblock In \emph{Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 3431--3440, 2015.
+
+\bibitem[Lu et~al.(2020)Lu, Chen, Zhao, and
+  Chen]{lu2020graphfcnimagesemanticsegmentation}
+Yi Lu, Yaran Chen, Dongbin Zhao, and Jianxin Chen.
+\newblock Graph-fcn for image semantic segmentation, 2020.
+
+\bibitem[Lu et~al.(2021)Lu, Chen, Zhao, Liu, Lai, and Chen]{9103557}
+Yi Lu, Yaran Chen, Dongbin Zhao, Bao Liu, Zhichao Lai, and Jianxin Chen.
+\newblock Cnn-g: Convolutional neural network combined with graph for image
+  segmentation with theoretical analysis.
+\newblock \emph{IEEE Transactions on Cognitive and Developmental Systems},
+  13\penalty0 (3):\penalty0 631--644, 2021.
+
+\bibitem[Minaee et~al.(2022)Minaee, Boykov, Porikli, Plaza, Kehtarnavaz, and
+  Terzopoulos]{9356353}
+Shervin Minaee, Yuri Boykov, Fatih Porikli, Antonio Plaza, Nasser Kehtarnavaz,
+  and Demetri Terzopoulos.
+\newblock Image segmentation using deep learning: A survey.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, 44\penalty0 (1):\penalty0 3523--3542, 2022.
+
+\bibitem[Xie et~al.(2021)Xie, Wang, Yu, Anandkumar, Alvarez, and
+  Luo]{xie2021segformersimpleefficientdesign}
+Enze Xie, Wenhai Wang, Zhiding Yu, Anima Anandkumar, Jose~M. Alvarez, and Ping
+  Luo.
+\newblock Segformer: Simple and efficient design for semantic segmentation with
+  transformers, 2021.
+
+\bibitem[Zhou et~al.(2019)Zhou, Siddiquee, Tajbakhsh, and
+  Liang]{zhou2019unet++}
+Zongwei Zhou, Md~Mahfuzur~Rahman Siddiquee, Nima Tajbakhsh, and Jianming Liang.
+\newblock Unet++: A nested u-net architecture for medical image segmentation.
+\newblock \emph{Deep learning in medical image analysis and multimodal learning
+  for clinical decision support}, 2019.
+
+\end{thebibliography}
